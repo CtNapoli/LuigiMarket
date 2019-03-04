@@ -54,3 +54,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #Adding materialize
 gem 'materialize-sass'
+
+#adding devise
+gem 'devise'
