@@ -4,10 +4,20 @@
       <%= link_to "LuigiMarket", root_path, class:"brand-logo" %>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <%= link_to "About", about_path %>
+        <% if user_signed_in? %>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "Login", new_user_session_path %></li>
+          <li><%= link_to "Registrazione", new_user_registration_path %></li>
+        <% end %>
       </ul>
       <ul class="sidenav" id="mobile-demo">
-        <%= link_to "About", about_path %>
+        <% if user_signed_in? %>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "Login", new_user_session_path %></li>
+          <li><%= link_to "Registrazione", new_user_registration_path %></li>
+        <% end %>
       </ul>
     </div>
   </nav>
