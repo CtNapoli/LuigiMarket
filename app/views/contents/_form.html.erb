@@ -1,10 +1,10 @@
-<%= form_with(model: content, local: true) do |form| %>
+<%= form_for @content, html: {multipart: true} do |form| %>
   <% if content.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(content.errors.count, "error") %> prohibited this content from being saved:</h2>
 
       <ul>
-      <% content.errors.full_messages.each do |message| %>
+      <% @content.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -13,17 +13,27 @@
 
   <div class="field">
     <%= form.label :titolo %>
-    <%= form.text_field :titolo, id: :content_titolo %>
+    <%= form.text_field :titolo %>
   </div>
 
   <div class="field">
     <%= form.label :descrizione %>
-    <%= form.text_area :descrizione, id: :content_descrizione %>
+    <%= form.text_area :descrizione %>
   </div>
 
   <div class="field">
     <%= form.label :price %>
-    <%= form.text_field :price, id: :content_price %>
+    <%= form.text_field :price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cover %>
+    <%= form.file_field :cover %>
+  </div>
+
+  <div class="field">
+    <%= form.label :allegato %>
+    <%= form.file_field :allegato %>
   </div>
 
   <div class="actions">

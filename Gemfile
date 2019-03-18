@@ -57,3 +57,6 @@ gem 'materialize-sass'
 
 #adding devise
 gem 'devise'
+
+#adding paperclip
+gem "paperclip"
