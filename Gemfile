@@ -60,3 +60,7 @@ gem 'devise'
 
 #adding paperclip
 gem "paperclip"
+
+#Adding will_paginate
+gem 'will_paginate'
+gem 'will_paginate-materialize'
