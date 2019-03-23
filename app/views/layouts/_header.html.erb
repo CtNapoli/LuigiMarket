@@ -4,6 +4,7 @@
       <%= link_to "LuigiMarket", root_path, class:"brand-logo" %>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
+        <li><%= link_to 'Vendi Contenuto', new_content_path %></li>
         <% if user_signed_in? %>
           <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
         <% else %>
@@ -12,6 +13,7 @@
         <% end %>
       </ul>
       <ul class="sidenav" id="mobile-demo">
+        <li><%= link_to 'Vendi Contenuto', new_content_path %></li>
         <% if user_signed_in? %>
           <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
         <% else %>
