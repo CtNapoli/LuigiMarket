@@ -70,3 +70,8 @@ gem 'friendly_id'
 
 #Protect API
 gem 'dotenv-rails', groups: [:development, :test]
+
+#Adding Stripe for payements
+gem 'stripe'
+
+gem 'aasm'
