@@ -64,3 +64,9 @@ gem "paperclip"
 #Adding will_paginate
 gem 'will_paginate'
 gem 'will_paginate-materialize'
+
+#Adding friendly_id
+gem 'friendly_id'
+
+#Protect API
+gem 'dotenv-rails', groups: [:development, :test]
