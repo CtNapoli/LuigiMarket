@@ -1,6 +1,8 @@
 @import 'materialize';
+@import "font-awesome-sprockets";
+@import "font-awesome"
 
-body {
+body 
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -17,4 +19,18 @@ main {
 
 .card-image {
   height: 150px;
+}
+
+.home-subtitle {
+  margin: 5% 0 5% 0;
+}
+
+.fa-social {
+  padding: 0 10px;
+}
+
+@media (max-width: 600px) {
+  .fa-social {
+    padding: 0 10%;
+  }
 }
