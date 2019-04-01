@@ -2,7 +2,7 @@
 @import "font-awesome-sprockets";
 @import "font-awesome"
 
-body 
+body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
