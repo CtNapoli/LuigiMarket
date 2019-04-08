@@ -1,0 +1,87 @@
+<h1 class="center">Dashboard</h1>
+
+<div class="row">
+   <div class="col s12">
+     <ul class="tabs">
+       <li class="tab col s3"><a href="#storico">Storico</a></li>
+       <li class="tab col s3"><a href="#vendita">In Vendita</a></li>
+     </ul>
+   </div>
+
+   <div id="storico" class="col s12">
+     <h4>Vendite</h4>
+     <table>
+       <thead>
+         <tr>
+           <th>Nome</th>
+           <th>Prezzo</th>
+           <th>Data</th>
+           <th>Acquirente</th>
+         </tr>
+        </thead>
+        <tbody>
+           <% @sales.each do |sale| %>
+           <tr>
+             <th><%= sale.content.titolo %></th>
+             <th><%= number_to_currency(sale.amount / 100) %></th>
+             <th><%= time_ago_in_words(sale.created_at) %> fa</th>
+             <th><%= sale.email_acquirente %>
+             </th>
+           </tr>
+           <% end %>
+         </tbody>
+     </table>
+
+      <br>
+      <br>
+     <h4>Acquisti</h4>
+
+     <table>
+       <thead>
+         <tr>
+           <th>Nome</th>
+           <th>Prezzo</th>
+           <th>Data di creazione</th>
+           <th>email venditore</th>
+         </tr>
+        </thead>
+        <tbody>
+           <% @purchased.each do |purchase| %>
+           <tr>
+             <th><%= link_to purchase.content.titolo, pickup_path(purchase.guid) %></th>
+             <th><%= number_to_currency(purchase.amount / 100) %></th>
+             <th><%= time_ago_in_words(purchase.created_at) %> fa</th>
+             <th><%= purchase.email_venditore %></th>
+           </tr>
+           <% end %>
+         </tbody>
+     </table>
+
+   </div>
+
+
+   <div id="vendita" class="col s12">
+     <table>
+       <thead>
+         <tr>
+           <th>Nome</th>
+           <th>Prezzo</th>
+           <th>Data creazione</th>
+           <th>Azioni</th>
+         </tr>
+        </thead>
+        <tbody>
+           <% @content.each do |content| %>
+           <tr>
+             <th><%= link_to content.titolo, content_path(content) %></th>
+             <th><%= content.price %></th>
+             <th><%= content.created_at %></th>
+             <th><%= link_to "Modifica", edit_content_path(content) %> |
+               <%= link_to "Elimina", content, method: :delete, data: {confirm: 'Sei sicuro di volere cancellare questo contenuto?'} %>
+             </th>
+           </tr>
+           <% end %>
+         </tbody>
+     </table>
+   </div>
+ </div>

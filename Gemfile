@@ -85,4 +85,4 @@ gem 'stripe'
 
 gem 'aasm'
 
-gem 'font-awesome-sass'
+gem "font-awesome-rails"

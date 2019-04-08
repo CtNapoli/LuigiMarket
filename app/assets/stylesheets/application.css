@@ -1,6 +1,6 @@
 @import 'materialize';
-@import "font-awesome-sprockets";
-@import "font-awesome"
+@import "font-awesome";
+
 
 body {
   display: flex;
@@ -10,6 +10,10 @@ body {
 
 main {
   flex: 1 0 auto;
+}
+
+.content-show {
+  margin-top: 5%;
 }
 
 .btn-devise {
@@ -27,6 +31,10 @@ main {
 
 .fa-social {
   padding: 0 10px;
+}
+
+.dropdown-content {
+  min-width: 150px;
 }
 
 @media (max-width: 600px) {
